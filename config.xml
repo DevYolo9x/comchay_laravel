@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<permissions>
+		<title>Danh mục - [Sản phẩm]</title>
+		<item>
+			<param>products/backend/catalogues/view</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>products/backend/catalogues/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>products/backend/catalogues/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>products/backend/catalogues/delete</param>
+			<description>Xóa</description>
+		</item>
+		<item>
+			<param>products/backend/catalogues/read</param>
+			<description>Đọc</description>
+		</item>
+	</permissions>
+	<permissions>
+		<title>[Sản phẩm]</title>
+		<item>
+			<param>products/backend/products/view</param>
+			<description>Xem</description>
+		</item>
+		<item>
+			<param>products/backend/products/create</param>
+			<description>Thêm</description>
+		</item>
+		<item>
+			<param>products/backend/products/update</param>
+			<description>Sửa</description>
+		</item>
+		<item>
+			<param>products/backend/products/delete</param>
+			<description>Xóa</description>
+		</item>
+		<item>
+			<param>products/backend/products/read</param>
+			<description>Đọc</description>
+		</item>
+		<item>
+			<param>products/backend/products/limit</param>
+			<description>Không Giới hạn</description>
+		</item>
+	</permissions>
+</module>

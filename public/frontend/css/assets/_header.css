@@ -1,0 +1,60 @@
+header  .main-logo{
+    width: 13%;
+}
+
+
+ .main-menu li  .submenu{
+    width: 250px;
+   }
+
+   #defaultModal .content-1{
+    max-width: 730px;
+   }
+   .right-header  .nav-search  input[type=text]{
+    width: 250px;
+    height: 40px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+   }
+ .right-header .nav-search {
+    display: none;
+ }
+li.cart span{
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    right: -10px;
+ }
+ .header-mobile .logo img{
+    width: 80px;
+ }
+ #primary-nav-button i{
+    font-size: 20px;
+ }
+ header{
+    background: #fff;
+ }
+ @media only screen and (max-width: 736px) {
+    header .right-header{
+        width: auto;
+    }
+    #primary-nav-button.mobile{
+        position: absolute;
+        left: 15px;
+        margin-top: 29px;
+    }
+   
+    .right-header ul{
+        margin-top: 30px;
+        margin-right: 8px;
+    }
+    .right-header .nav-search{
+        z-index: 99;
+    }
+ }

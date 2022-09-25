@@ -1,0 +1,46 @@
+Check empty get(): @if(!$result->isEmpty())
+Check empty first(): if ($result) { } 
+
+/*Tạo 1 module và phân quyền*/
+- php artisan make:model Stock -m
+- Tạo bảng: php artisan migrate
+- php artisan make:controller --resource StockController
+- php artisan make:policy StockPolicy --model=Stock
+=> AuthServiceProvider
+$this->StockPolicy;
+public function StockPolicy()
+{
+    Gate::define('stock_index', [StockPolicy::class, 'index']);
+    Gate::define('stock_create', [StockPolicy::class, 'create']);
+    Gate::define('stock_edit', [StockPolicy::class, 'edit']);
+    Gate::define('stock_destroy', [StockPolicy::class, 'destroy']);
+}
+=> config/permissions.php
++ add: modules stock
++ add:
+'stock' => [
+    'index' => 'stock_index',
+    'create' => 'stock_create',
+    'edit' => 'stock_edit',
+    'destroy' => 'stock_destroy',
+],
+=> router
+Route::group(['prefix' => '/stock'], function () {
+    Route::get('/index', [StockController::class, 'index'])->name('stock.index')->middleware('can:stock_index');
+    Route::get('/create', [StockController::class, 'create'])->name('stock.create')->middleware('can:stock_create');
+    Route::post('/store', [StockController::class, 'store'])->name('stock.store')->middleware('can:stock_create');
+    Route::get('/edit/{id}', [StockController::class, 'edit'])->name('stock.edit')->middleware('can:stock_edit');
+    Route::post('/update/{id}', [StockController::class, 'update'])->name('stock.update')->middleware('can:stock_edit');
+    Route::get('/destroy/{id}', [StockController::class, 'destroy'])->name('stock.destroy')->middleware('can:stock_destroy');
+});
+=> ngoài blade
+@can('stock_index')
+
+@endcan
+@can('stock_create')
+
+@endcan
+@can('stock_edit')
+
+@endcan
+/*end*/
