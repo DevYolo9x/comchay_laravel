@@ -51,7 +51,7 @@ class HomeController extends Controller
         ->with('postmeta')
         ->first();
 
-        dd($page);
+        //dd($page);
 
         $seo['canonical'] = url('/');
         $seo['meta_title'] = !empty($page['meta_title']) ? $page['meta_title'] : $page['title'];

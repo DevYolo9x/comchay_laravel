@@ -313,7 +313,7 @@ if (!function_exists('showField')) {
 	function showField( $data = array(), $meta_key = '' )
 	{
 
-		dd($data);
+		//dd($data);
 		if( isset($data) && is_array($data) && count($data) || $meta_key != '' ){
 			foreach( $data as $key => $val ){
 				if( $val['meta_key'] == $meta_key ){
